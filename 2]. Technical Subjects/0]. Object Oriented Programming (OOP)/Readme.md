@@ -220,11 +220,17 @@ using namespace std;
 
 class go { 
     public:
-        int x; 
-        go(int a){ // parameterized constructor.
+    int x;
+    go()
+    { // default constructor.
+        x=0; 
+    }
+    go(int a)
+    { // parameterized constructor.
         x=a; 
     }
-    go(go &i){ // copy constructor 
+    go(go &i)
+    { // copy constructor 
         x = i.x; 
     } 
 };
