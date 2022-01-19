@@ -145,6 +145,56 @@ int main() {
 ```
  -  setDataBySum  is the member function hence it will have acess to the dat members but if we create a foriegn functionand pass the objects as an argruments than it will not have an acess to the private members so to do that we have to declare that as a friend function
  -  Friend Function can be invoked without the help of an objects and they need not to be declared in the public section can be declared anywhere They are not int the scope of the class.
+  -  Friend class and the forward declaration can be understood with given .
+   
+ **`C++ Syntax (for class):`**
+```c++
+
+class Complex;
+class Calculator
+{
+    public:
+    int addReal(Complex ,Complex );
+    int addComplex(Complex ,Complex );
+};
+class Complex
+{
+    int a,b;
+    public:
+    // friend int Calculator::addReal(Complex c1,Complex c2);
+    // friend int Calculator::addComplex(Complex c1,Complex c2);
+    friend class Calculator;
+    friend Complex sum(Complex c1,Complex c2);
+    Complex()
+    {
+        a=0;
+        b=0;
+    }
+    Complex(int num1,int num2)
+    {
+        a=num1;
+        b=num2;
+    }
+    void setDataBySum(Complex c1,Complex c2)
+    {
+        a=c1.a+c2.a;
+        b=c1.b+c2.b;
+    } 
+// This is the member function hence it will have acess to the dat members but if we create a foriegn functionand pass the objects as an argruments than it will not have an acess to the private members so to do that we have to declare that as a friend function .
+    void printNumber()
+    {
+        cout<<a<<" + "<<b<<"i"<<endl;
+    }
+};
+int Calculator::addReal(Complex c1,Complex c2)
+{
+    return c1.a+c2.a;
+}
+int Calculator::addComplex(Complex c1,Complex c2)
+{
+    return c1.b+c2.b;
+}
+```
    
    
    
