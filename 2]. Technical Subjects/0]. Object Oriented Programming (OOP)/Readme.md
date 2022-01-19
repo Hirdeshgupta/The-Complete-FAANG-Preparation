@@ -32,6 +32,13 @@ student s = new student();
 **Note:**
 - When an object is created using a new keyword, then space is allocated for the variable in a heap, and the starting address is stored in the stack memory. When an object is created without a new keyword, then space is not allocated in the heap memory, and the object contains the null value in the stack.
 
+
+## Access Modifiers 
+- They are used for data hiding by writing public , private and protected to the class and by writing this lets say private the data members of the class are only accessable to that classs functions only ans cannot be used outside ans if we write public than the  data members are publicaliy acesaable by just writing the instance of an object.<data member> private data members can be used by member functions and friend functions and the protected  data menbers are similar to private but they can be used by the  subclass inheriting the base class also.
+
+
+
+
 ## Inheritance
 - **Inheritance** is a process in which one object acquires all the properties and behaviors ofits parent object automatically. In such a way, you can reuse, extend or modify the attributes and behaviors which are defined in other classes. 
 - In C++, the class which inherits the members of another class is called derived class and the class whose members are inherited is called base class. The derived class is the specialized class for the base class.
