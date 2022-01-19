@@ -37,6 +37,24 @@ student s = new student();
 - They are used for data hiding by writing public , private and protected to the class and by writing this lets say private the data members of the class are only accessable to that classs functions only ans cannot be used outside ans if we write public than the  data members are publicaliy acesaable by just writing the instance of an object.<data member> private data members can be used by member functions and friend functions and the protected  data menbers are similar to private but they can be used by the  subclass inheriting the base class also.
 
 
+## Static Members  
+- Static data members area those members whose memory area allocated in refrence to the class not an object so when they are changed they it is reflected for all the objects of that class hence they are shared by all the objects for eg-> if we want to have the count of all the employees of the company than we can declare the count as an static variable and whenever we create any new object than the count++ hence we always know that what is the total count of the Employee.
+   
+   
+ **`C++ Syntax (for class):`**
+```c++
+class student {
+   public: 
+     int id; // data member 
+     int mobile; 
+     string name; 
+     
+     int add(int x, int y) { // member functions 
+       return x + y; 
+   } 
+};
+```
+
 
 
 ## Inheritance
