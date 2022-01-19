@@ -121,7 +121,6 @@ class Complex
         a=c1.a+c2.a;
         b=c1.b+c2.b;
     } 
-// This is the member function hence it will have acess to the dat members but if we create a foriegn functionand pass the objects as an argruments than it will not have an acess to the private members so to do that we have to declare that as a friend function .
     void printNumber()
     {
         cout<<a<<" + "<<b<<"i"<<endl;
@@ -144,7 +143,9 @@ int main() {
     return 0;
 }
 ```
- 
+ -  setDataBySum  is the member function hence it will have acess to the dat members but if we create a foriegn functionand pass the objects as an argruments than it will not have an acess to the private members so to do that we have to declare that as a friend function
+ -  Friend Function can be invoked without the help of an objects and they need not to be declared in the public section can be declared anywhere They are not int the scope of the class.
+   
    
    
 
