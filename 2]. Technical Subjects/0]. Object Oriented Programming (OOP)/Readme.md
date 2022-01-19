@@ -43,20 +43,55 @@ student s = new student();
    
  **`C++ Syntax (for class):`**
 ```c++
-class student {
+class Employee {
+   int static count; // static data member of a class Employee
    public: 
      int id; // data member 
-     int mobile; 
+     int mobile_no; 
      string name; 
-     
-     int add(int x, int y) { // member functions 
-       return x + y; 
-   } 
+     int salary;
 };
+int Employee:: count=1000;
 ```
+   
+- Static functions are those functions which need not the boject to be created to be called but it can be called by the class only they willl be working on the static members any other static functions .
+   
+**`C++ Syntax (for class):`**
+```c++
+class Employee {
+   int static count; // static data member of a class Employee
+   public: 
+     int id; // data member 
+     int mobile_no; 
+     string name; 
+     int salary;
+     int static getCount()
+      {
+         return count;
+      }
+};
+int Employee:: count=1000;
+cout<<Employee::getCount()<<endl;
+```
+   
+    Static local variable = class variables
+   Visibility: class
+   Lifetime: till termination of program
+   Default value:0
+   Storage:heap
 
+   Local Variable
+   Visibility: class
+   Lifetime: until execution of class
+   Default value:garbage
+   Storage:stack
 
-
+   Global variable
+   Visibility: file
+   Lifetime: till termination of program
+   Default value:0
+   Storage:heap
+   
 ## Inheritance
 - **Inheritance** is a process in which one object acquires all the properties and behaviors ofits parent object automatically. In such a way, you can reuse, extend or modify the attributes and behaviors which are defined in other classes. 
 - In C++, the class which inherits the members of another class is called derived class and the class whose members are inherited is called base class. The derived class is the specialized class for the base class.
