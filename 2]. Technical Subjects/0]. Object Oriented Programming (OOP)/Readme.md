@@ -73,8 +73,7 @@ class Employee {
 int Employee:: count=1000;
 cout<<Employee::getCount()<<endl;
 ```
-   
-    Static local variable = class variables
+   Static local variable = class variables
    Visibility: class
    Lifetime: till termination of program
    Default value:0
@@ -92,6 +91,63 @@ cout<<Employee::getCount()<<endl;
    Default value:0
    Storage:heap
    
+   
+## Friend Functions : - 
+- To assign the authority to any forign function to acess the private data members we have to assign it as friend function it will not be the member function of the class.
+ 
+**`C++ Syntax (for class):`**
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Complex
+{
+    int a,b;
+    public:
+    friend Complex sum(Complex c1,Complex c2);
+    Complex()
+    {
+        a=0;
+        b=0;
+    }
+    Complex(int num1,int num2)
+    {
+        a=num1;
+        b=num2;
+    }
+    void setDataBySum(Complex c1,Complex c2)
+    {
+        a=c1.a+c2.a;
+        b=c1.b+c2.b;
+    } 
+// This is the member function hence it will have acess to the dat members but if we create a foriegn functionand pass the objects as an argruments than it will not have an acess to the private members so to do that we have to declare that as a friend function .
+    void printNumber()
+    {
+        cout<<a<<" + "<<b<<"i"<<endl;
+    }
+};
+
+Complex sum(Complex c1,Complex c2)
+{
+    Complex c3(c1.a+c2.a,c1.b+c2.b);
+    return c3;
+}
+
+int main() {
+    Complex c1(1,2);
+    Complex c2(2,3);
+    Complex c3=sum(c1,c2);
+    // c3.setDataBySum(c1,c2);
+    c3.printNumber();
+    // cout << "Hello World!\n";
+    return 0;
+}
+```
+ 
+   
+   
+
 ## Inheritance
 - **Inheritance** is a process in which one object acquires all the properties and behaviors ofits parent object automatically. In such a way, you can reuse, extend or modify the attributes and behaviors which are defined in other classes. 
 - In C++, the class which inherits the members of another class is called derived class and the class whose members are inherited is called base class. The derived class is the specialized class for the base class.
